@@ -1,0 +1,53 @@
+// Paleta de cores;
+$branco: #FAFAFA;
+$preto: #060606;
+$cinza-escuro: #282A2D;
+$cinza-medio: #3E3E41;
+$cinza-claro: #b0b2b3;
+$vermelho-escuro: #5D050A;
+$vermelho-medio: #A7070D;
+$vermelho-claro: #C20810;
+$verde: #96D800;
+
+// Tipografia;
+$fonte-padrao: 'Roboto', sans-serif, Helvetica;
+$texto-pequeno: 14px;
+$texto-medio: 18px;
+$texto-grande: 24px;
+$titulo: 36px;
+$titulo-grande: 48px;
+
+// Breakpoints
+$tablet: 767px;
+$celular: 421px;
+
+// Mixins
+@mixin texto($size: 14) {
+  font-family: $fonte-padrao;
+  font-size: $size + px;
+  line-height: $size * 1.5 + px;
+}
+
+@mixin titulo($size: 36) {
+  font-family: $fonte-padrao;
+  font-size: $size + px;
+  line-height: $size + px;
+}
+
+@mixin container {
+  max-width: 980px;
+  padding: 0px 20px;
+  margin: 0 auto;
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
+  }
+}
+
+@mixin titulo-separador {
+  content: "";
+  display: block;
+  background-color: $branco;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 5px;
+}

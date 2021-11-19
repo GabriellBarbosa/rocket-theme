@@ -1,0 +1,107 @@
+.footer {
+  background-color: $preto;
+  padding-top: 40px;
+
+  h2 {
+    margin-bottom: 20px;
+    @include texto(24);
+    font-weight: normal;
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-wrap: wrap;
+
+  .footer-col-1,
+  .footer-col-2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+}
+
+.footer-contatos {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+
+  li {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    span {
+      color: $cinza-claro;
+      @include texto(18);
+    }
+    img {
+      width: 24px;
+      height: 24px;
+      &.footer-mail {
+        width: 24px;
+        height: 26px;
+      }
+    }
+  }
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &.redes-sociais li a {
+    display: block;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid $cinza-medio;
+    transition: 0.2s;
+    &:hover {
+      border-color: $vermelho-escuro;
+    }
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.footer-seguranca-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  > p {
+    color: $cinza-claro;
+    @include texto(18);
+  }
+}
+
+.footer-adicional-info {
+  margin-top: 60px;
+  background-color: $cinza-escuro;
+  padding: 15px 0;
+  > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    p {
+      @include texto(14);
+      a {
+        text-decoration: underline;
+        transition: 0.2s;
+        &:hover {
+          color: $vermelho-claro;
+        }
+      }
+    }
+  }
+}

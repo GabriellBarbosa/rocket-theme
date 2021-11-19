@@ -1,0 +1,138 @@
+.woocommerce-cart {
+  .woocommerce {
+    @include container;
+    margin-top: 40px;
+  }
+  .cart-empty.woocommerce-info {
+    @include texto(18);
+  }
+  .return-to-shop {
+    a {
+      border-radius: 0;
+      background-color: $branco;
+      color: $preto;
+      margin-bottom: 40px;
+      padding: 15px;
+      @include texto(18);
+    }
+  }
+  .shop_table.cart {
+    margin: 0 0 40px 0;
+    thead {
+      background-color: #121212;
+    }
+    tr th,
+    tr td {
+      color: $branco;
+      padding: 15px;
+      font-weight: normal;
+      @include texto(14);
+    }
+    tbody tr {
+      position: relative;
+      td {
+        border-bottom: 1px solid #121212;
+        @media screen and (max-width: 768px) {
+          &.product-thumbnail {
+            display: block !important;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            &::before {
+              display: none;
+            }
+          }
+        }
+        &.product-remove {
+          a.remove {
+            color: $vermelho-claro;
+            width: 24px;
+            height: 24px;
+            &:hover {
+              background-color: $branco !important;
+              color: $vermelho-claro !important;
+            }
+          }
+        }
+        button.button {
+          background-color: $branco;
+          color: $preto;
+          border-radius: 0;
+          padding: 15px;
+          &:hover {
+            background-color: $branco;
+            color: $preto;
+          }
+          &:disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+      @media screen and (max-width: 768px) {
+        &:nth-child(odd) {
+          background-color: #121212;
+          td {
+            border-color: $cinza-escuro;
+          }
+        }
+        &:last-child {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .cart-collaterals {
+    margin-bottom: 40px;
+    .cart_totals {
+      h2 {
+        font-weight: normal;
+        @include texto(24);
+        &::before {
+          @include titulo-separador;
+        }
+      }
+      table.shop_table {
+        margin-top: 20px;
+        tbody {
+          tr {
+            th, td {
+              border-color: #121212;
+              padding: 15px 0;
+              font-weight: normal;
+              @include texto(18);
+            }
+          }
+          .woocommerce-shipping-calculator {
+            p {
+              button.button {
+                padding: 15px;
+                border-radius: 0;
+                background-color: $branco;
+                color: $preto;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+      .wc-proceed-to-checkout {
+        padding: 0;
+        .checkout-button {
+          margin: 20px 0 0 0;
+          font-weight: normal;
+          color: $branco;
+          @include texto(24);
+          background-color: $preto;
+          border: 2px solid $vermelho-escuro;
+          padding: 20px;
+          transition: 0.2s;
+          &:hover {
+            background-color: $vermelho-escuro;
+          }
+        }
+      }
+    }
+  }
+}

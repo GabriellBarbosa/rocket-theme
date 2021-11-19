@@ -1,0 +1,78 @@
+.home-intro {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  @media screen and (max-width: $celular) {
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+}
+
+.home-categoria {
+  display: block;
+  position: relative;
+  max-width: 300px;
+  max-height: 300px;
+  @media screen and (max-width: $celular) {
+    max-width: 260px;
+    max-height: 260px;
+  }
+  @media screen and (max-width: $celular) {
+    max-width: 340px;
+    max-height: 340px;
+  }
+
+  > div {
+    position: absolute;
+    bottom: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    background-color: $preto;
+    color: $branco;
+    border: 2px solid $vermelho-escuro;
+    padding: 10px;
+    @include texto(24);
+    transition: 0.2s;
+    @media screen and (max-width: $tablet) and (min-width: $celular) {
+      @include texto(18);
+      width: 140px;
+    }
+    @media screen and (max-width: $celular) {
+      bottom: 0px;
+    }
+  }
+
+  &:hover > div {
+    background-color: $vermelho-escuro;
+  }
+}
+
+.home-produtos {
+  margin: 110px auto 40px auto;
+  @media screen and (max-width: $celular) {
+    margin: 80px auto 40px auto;
+  }
+  > h1 {
+    font-weight: normal;
+    @include titulo(48);
+    @media screen and (max-width: $celular) {
+      @include titulo(36);
+    }
+    &::before  {
+      @include titulo-separador;
+    }
+  }
+  > div {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    @media screen and (max-width: $celular) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

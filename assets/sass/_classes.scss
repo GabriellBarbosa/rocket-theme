@@ -1,0 +1,58 @@
+.container {
+  max-width: 980px;
+  padding: 0px 20px;
+  margin: 0 auto;
+  @media screen and (max-width: $tablet) {
+    max-width: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  @include texto(18);
+  color: $branco;
+  background-color: $preto;
+  border: 2px solid $vermelho-escuro;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    background-color: $vermelho-escuro;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.device {
+  display: none;
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.titulo-da-pagina {
+  display: block;
+  background-color: #111111;
+  text-align: center;
+  padding: 20px 0;
+  h1 {
+    font-weight: normal;
+    text-align: center;
+    color: $branco;
+    @include titulo(36);
+  }
+}

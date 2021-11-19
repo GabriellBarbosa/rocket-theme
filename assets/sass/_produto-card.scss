@@ -1,0 +1,44 @@
+.produto-card-link {
+  display: block;
+  position: relative;
+
+  .produto-card-hover {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+    .card-button {
+      padding: 5px 15px;
+      border: 2px solid $branco;
+      color: $branco;
+      background: rgba(0, 0, 0, 0.5);
+      @include texto(18);
+      cursor: pointer;
+    }
+  }
+}
+
+.produto-card-info {
+  margin-top: 5px;
+
+  > h3,
+  > span {
+    display: block;
+    font-weight: normal;
+    @include texto(14);
+  }
+
+  > span {
+    margin-top: 10px;
+  }
+}

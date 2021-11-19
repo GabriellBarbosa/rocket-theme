@@ -1,0 +1,255 @@
+.woocommerce-checkout {
+  .woocommerce {
+    @include container;
+    margin: 40px auto;
+    .woocommerce-form-login {
+      border: none;
+      padding: 0 20px;
+      p {
+        @include texto(14);
+        &:first-child {
+          max-width: 530px;
+          color: $cinza-claro;
+        }
+        &.form-row-first,
+        &.form-row-last {
+          float: none;
+          padding-top: 20px !important;
+          margin: 0 !important;
+        }
+        &.form-row {
+          a {
+            text-decoration: underline;
+          }
+          button.button {
+            background-color: $branco;
+            color: $preto;
+            padding: 10px 25px;
+            border-radius: 0;
+            margin: 10px 0;
+          }
+        }
+        &.lost_password {
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .rocket-checkout-fields-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      @media screen and (max-width: $tablet) {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+      }
+      @media screen and (max-width: $celular) {
+        padding: 0;
+      }
+      > h3 {
+        font-weight: normal;
+        @include texto(24);
+        grid-row: 1;
+        grid-column: 2;
+        align-items: start;
+        @media screen and (max-width: $tablet) {
+          grid-row: 2;
+          grid-column: 1;
+          &::before {
+            @include titulo-separador;
+          }
+        }
+      }
+    }
+    #customer_details {
+      .col-1,
+      .col-2 {
+        float: none;
+        display: block;
+        width: 100%;
+        &.col-1 h3 {
+          display: none;
+        }
+        &.col-2  {
+          display: none;
+        }
+        .woocommerce-billing-fields__field-wrapper {
+          h4 {
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            font-weight: normal;
+            @include texto(18);
+            &::before {
+              content: "1";
+              display: grid;
+              place-items: center;
+              font-size: 14px;
+              width: 30px;
+              height: 30px;
+              border: 2px solid $cinza-claro;
+              border-radius: 50%;
+              margin-right: 10px;
+            }
+            &.checkout-step-1 {
+              padding-top: 0;
+            }
+            &.checkout-step-2::before {
+              content: "2";
+            }
+            &.checkout-step-3::before {
+              content: "3";
+            }
+          }
+          .form-row {
+            padding-top: 20px !important;
+            margin: 0px !important;
+            float: none;
+            // inline fields
+            &#billing_first_name_field,
+            &#billing_last_name_field,
+            &#billing_phone_field,
+            &#billing_cellphone_field,
+            &#billing_postcode_field,
+            &#billing_address_1_field,
+            &#billing_number_field,
+            &#billing_address_2_field,
+            &#billing_neighborhood_field,
+            &#billing_city_field {
+              display: inline-block;
+              width: 48% !important;
+            }
+            // inline fields padding left
+            &#billing_last_name_field,
+            &#billing_cellphone_field,
+            &#billing_address_1_field,
+            &#billing_address_2_field,
+            &#billing_city_field {
+              margin-left: 4% !important;
+              
+            }
+          }
+          #billing_country_field {
+            display: none;
+          }
+        }
+        .woocommerce-account-fields {
+          .create-account {
+            #account_password_field {
+              padding-top: 20px !important;
+            }
+          }
+        }
+      }
+    }
+    #order_review {
+      width: 100%;
+      grid-row: 1;
+      grid-column: 2;
+      margin-top: 60px;
+      @media screen and (max-width: $tablet) {
+        grid-row: 2;
+        grid-column: 1;
+      }
+      table.woocommerce-checkout-review-order-table {
+        border: 2px solid $cinza-medio;
+        border-radius: 0;
+        margin: 0 0 20px 0;
+        tr {
+          th, td {
+            color: $branco;
+            padding: 15px;
+            @include texto(18);
+            @media screen and (max-width: $celular) {
+              @include texto(14);
+            }
+          }
+          td.product-name {
+            color: $cinza-claro;
+          }
+        }
+      }
+      #payment {
+        background-color: transparent;
+        .wc_payment_methods {
+          border: none;
+        }
+        .button {
+          background-color: #00A211;
+          margin-top: 20px;
+          padding: 15px;
+          width: 100%;
+          border-radius: 0px;
+          font-weight: normal;
+          @include texto(24);
+        }
+        > ul {
+          padding: 0px;
+          > li {
+            > label {
+              text-indent: -999px;
+              img {
+                padding: 10px;
+                margin: 0 0 10px 0;
+                background-color: $branco;
+              }
+            }
+            .payment_box.payment_method_pagseguro {
+              background-color: $branco;
+              color: $preto;
+              padding: 15px;
+              border-radius: 0;
+              &::before {
+                display: none;
+              }
+              > p {
+                @include texto(14);
+              }
+              fieldset#pagseguro-payment-form {
+                border: none !important;
+                margin: 10px 0 0 0;
+                > p {
+                  margin-top: 10px;
+                  @include texto(14);
+                }
+                #pagseguro-credit-card-form {
+                  .form-row {
+                    float: none !important;
+                    width: 100%;
+                    margin: 10px 0 0 0 !important;
+                    &:first-child {
+                      margin: 0;
+                    }
+                    label {
+                      @include texto(14);
+                    }
+                    input,
+                    select {
+                      padding: 10px !important;
+                      background-color: #E4E4E4 !important;
+                      color: $preto;
+                      font-size: 14px !important;
+                      line-height: 21px !important;
+                    }
+                  }
+                }
+                #pagseguro-bank-transfer-form,
+                #pagseguro-banking-ticket-form {
+                  p {
+                    @include texto(14);
+                  }
+                  &#pagseguro-banking-ticket-form {
+                    p {
+                      margin-top: 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

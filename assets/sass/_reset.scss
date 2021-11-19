@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $branco;
+}
+
+input {
+  outline: none;
+  border: none;
+  font-family: $fonte-padrao;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  border: none;
+}
+
+body {
+  background-color: $cinza-escuro;
+  color: $branco;
+  font-family: $fonte-padrao;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
